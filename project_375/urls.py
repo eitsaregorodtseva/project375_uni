@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.urls import path
-from project375_1.apps.cabinet.views import index
+from project_375.apps.cabinet.views import index
 from .yasg import urlpatterns as doc_urls
 from django.contrib import admin
 
@@ -24,7 +24,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^api/', include('project375_1.core.urls')),
+    url('^api/', include('project_375.core.urls')),
     url('^$', index),
     ]
 urlpatterns += doc_urls

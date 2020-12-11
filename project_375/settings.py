@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'project375_1.apps.cabinet.apps.CabinetConfig',
+    'project_375.apps.cabinet.apps.CabinetConfig',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    'project375_1.core.apps.CoreConfig',
+    'project_375.core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project375_1.urls'
+ROOT_URLCONF = 'project_375.urls'
 
 TEMPLATES = [
     {
@@ -81,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project375_1.wsgi.application'
+WSGI_APPLICATION = 'project_375.wsgi.application'
 
 
 # Database
