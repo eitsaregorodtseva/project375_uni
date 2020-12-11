@@ -1,0 +1,12 @@
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+venv/
+static/css/
+static/js/
+.idea
+
+db.sqlite3
+yarn.lock
+package-lock.json
