@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'project_375.core.apps.CoreConfig',
-    'social_django'
+    'social_django',
+    'project_375.apps.tests.apps.TestsConfig'
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
+    #'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
@@ -162,8 +163,8 @@ SOCIAL_AUTH_VK_OAUTH2_KEY = '7688928'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'Y3VqcpoXdmpQtA1CgMO0'
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '3975313152500270'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'ef1c0a0a0dbc98b10d55b7e21cfbd2aa'
+#SOCIAL_AUTH_FACEBOOK_KEY = '3975313152500270'
+#SOCIAL_AUTH_FACEBOOK_SECRET = 'ef1c0a0a0dbc98b10d55b7e21cfbd2aa'
 
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '910249002667-mqtpqkcbfumunupuaq6mo0h76uq61h6e.apps.googleusercontent.com'
@@ -173,13 +174,14 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '1anv0LbM7ADwOuBhOBlrBiCu'
 LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+#SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+#SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.associate_by_email',
+    'social_core.pipeline.user.user_details',
 )

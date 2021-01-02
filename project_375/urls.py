@@ -23,9 +23,11 @@ from django.contrib import admin
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^api/', include('project_375.core.urls')),
+    url('^test/', include('project_375.apps.tests.urls')),
     url('^$', index),
     path('', include('social_django.urls')),
     path('privacy/', privacy),
