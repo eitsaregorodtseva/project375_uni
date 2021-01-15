@@ -49,8 +49,13 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'project_375.core.apps.CoreConfig',
     'social_django',
-    'project_375.apps.tests.apps.TestsConfig'
+    'project_375.apps.tests.apps.TestsConfig',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8080',
+)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
