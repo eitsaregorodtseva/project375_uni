@@ -15,7 +15,7 @@ class UserAuthView(ObtainAuthToken):
         )
         if serializer.is_valid():
             user = serializer('User'),
-            token, created = Token.objects.get_or_create(user=user),
+            token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
         else:
             return Response({
