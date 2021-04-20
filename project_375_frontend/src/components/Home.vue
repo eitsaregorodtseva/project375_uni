@@ -2,7 +2,6 @@
     <div class="home">
       <NavBar></NavBar>
       <div class="body">
-        <button @click="goCabinet">Cabinet</button>
       </div>
     </div>
 </template>

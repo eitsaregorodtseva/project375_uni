@@ -8,17 +8,29 @@
           <h1>Вход</h1>
         </div>
         <div class="auth-form-body mt-3">
-          <form>
+          <h2 v-if="wrongCred">Wrong credentials entered!. Please enter your correct details.</h2>
+          <form @submit.prevent="loginUser">
             <label for="login_field" class="auth-form-label">
               Логин
             </label>
-            <input v-model="login" type="text" id="login_field" class="form-control input-block" autofocus="autofocus"/>
+            <input required v-model="login" type="text" id="login_field" class="form-control input-block" autofocus="autofocus"/>
             <label for="password" class="auth-form-label">
               Пароль
-              <router-link :to="{name: 'passwordreset'}" class="label-link">Забыли пароль?</router-link>
             </label>
-            <input v-model="password" type="password" id="password" class="form-control input-block" autofocus="autofocus"/>
-            <input type="submit" name="commit" value="Войти" class="btn btn-block btn-primary" @click="loginUser">
+            <input required v-model="password" type="password" id="password" class="form-control input-block" autofocus="autofocus"/>
+            <button type="submit" class="btn btn-block btn-primary">Войти</button>
+            <div class="social">
+              <a href="#" class="vk btn">
+                <i class="fa fa-vk fa-fw"></i>
+              </a>
+
+              <a href="#" class="fb btn">
+                <i class="fa fa-facebook fa-fw"></i>
+              </a>
+              <a href="#" class="google btn">
+                <i class="fa fa-google fa-fw"></i>
+              </a>
+            </div>
           </form>
         </div>
         <p class="login-callout mt-3">
@@ -32,49 +44,40 @@
 </template>
 
 <script>
-import axios from 'axios';
 import NavBar from '../components/Navbar'
 export default {
-    name: "Login",
-    components: {
-            NavBar
-        },
-    data() {
+  name: 'Login',
+  components: {
+    NavBar
+  },
+  data () {
         return {
-            login: this.login,
-            password: this.password,
+            login: '',
+            password: '',
+            wrongCred: false
         }
     },
-        methods: {
-            goCabinet() {
-                this.$router.push({name: "cabinet"})
-            },
-            loginUser: function () {
-                axios({
-                        method: 'POST',
-                        url: 'http://localhost:8000/accounts/login/',
-                        params: {
-                            login: this.login,
-                            password: this.password
-                        },
+    methods: {
+        goCabinet () {
+            this.$router.push({name: 'cabinet'})
+        },
+        loginUser () {
+            this.$store.dispatch('loginUser', {
+                login: this.login,
+                password: this.password
+            })
+            .then(() => {
+              this.wrongCred = false
+              this.$router.push({ name: 'cabinet' })
+            })
+          .catch(err => {
+            console.log(err)
+            this.wrongCred = true // if the credentials were wrong set wrongCred to true
+          })
+        }
 
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        xhrFields: {
-                            withCredentials: true
-                        }
-                }
-                )
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            }
-            },
     }
+}
 </script>
 
 <style scoped>
@@ -230,10 +233,6 @@ input {
 .p-0 {
   padding: 0!important;
 }
-.label-link {
-  float: right;
-  font-size: 12px;
-}
 * {
   box-sizing: border-box;
 }
@@ -243,5 +242,17 @@ div {
 label {
   font-weight: 600;
   cursor: default;
+}
+.vk {
+  background-color: #3B5998;
+  color: white;
+}
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+.google {
+  background-color: #dd4b39;
+  color: white;
 }
 </style>

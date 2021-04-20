@@ -8,38 +8,37 @@
           <h1>Регистрация</h1>
         </div>
         <div class="registr-form-body mt-3">
-          <form>
+          <form @submit.prevent="registerUser">
             <label for="login_field" class="registr-form-label">
               Логин
             </label>
-            <input v-model="login" type="text" id="login_field" class="form-control input-block" autofocus="autofocus"/>
+            <input required v-model="login" type="text" id="login_field" class="form-control input-block" autofocus="autofocus"/>
 
             <label for="first_name" class="registr-form-label">
               Имя
             </label>
-            <input v-model="first_name" type="text" id="first_name" class="form-control input-block" autofocus="autofocus"/>
+            <input required v-model="first_name" type="text" id="first_name" class="form-control input-block" autofocus="autofocus"/>
 
             <label for="last_name" class="registr-form-label">
               Фамилия
             </label>
-            <input v-model="last_name" type="text" id="last_name" class="form-control input-block" autofocus="autofocus"/>
+            <input required v-model="last_name" type="text" id="last_name" class="form-control input-block" autofocus="autofocus"/>
 
             <label for="email" class="registr-form-label">
               E-mail
             </label>
-            <input v-model="email" type="text" id="email" class="form-control input-block" autofocus="autofocus"/>
+            <input required v-model="email" type="text" id="email" class="form-control input-block" autofocus="autofocus"/>
 
             <label for="password" class="registr-form-label">
               Пароль
             </label>
-            <input v-model="password" type="password" id="password" class="form-control input-block" autofocus="autofocus"/>
+            <input required v-model="password" type="password" id="password" class="form-control input-block" autofocus="autofocus"/>
 
             <label for="password_confirmation" class="registr-form-label">
               Подтверждение пароля
             </label>
-            <input v-model="password_confirmation" type="password" id="password_confirmation" class="form-control input-block" autofocus="autofocus"/>
-
-            <input type="submit" name="commit" value="Создать аккаунт" class="btn btn-block btn-primary" @click="registrUser">
+            <input required v-model="password_confirmation" type="password" id="password_confirmation" class="form-control input-block" autofocus="autofocus"/>
+            <button type="submit" class="btn btn-block btn-primary">Зарегистрироваться</button>
           </form>
         </div>
     </div>
@@ -49,54 +48,40 @@
 </template>
 
 <script>
-import axios from 'axios';
-import NavBar from '../components/Navbar'
-export default {
-    name: "Registration",
-    components: {
+    import NavBar from '../components/Navbar'
+    export default {
+        name: 'Registration',
+        components: {
             NavBar
         },
-    data() {
+        data () {
         return {
-            login: this.login,
-            first_name: this.first_name,
-            last_name: this.last_name,
-            email: this.email,
-            password: this.password,
+            login: '',
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: '',
+            password_confirmation: ''
         }
     },
-        methods: {
-            goCabinet() {
-                this.$router.push({name: "cabinet"})
-            },
-            registrUser: function () {
-                axios({
-                        method: 'POST',
-                        url: 'http://localhost:8000',
-                        params: {
-                            login: this.login,
-                            first_name: this.first_name,
-                            last_name: this.last_name,
-                            email: this.email,
-                            password: this.password
-                        },
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        xhrFields: {
-                            withCredentials: true
-                        }
-                }
-                )
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-            }
+    methods: {
+        goCabinet () {
+            this.$router.push({name: 'cabinet'})
+        },
+        registerUser () {
+            this.$store.dispatch('registerUser', {
+                login: this.login,
+                first_name: this.first_name,
+                last_name: this.last_name,
+                email: this.email,
+                password: this.password,
+                password_confirmation: this.password_confirmation
+            }).then(() => {
+                this.$router.push({name: 'login'})
+            })
         }
     }
+}
 </script>
 
 <style scoped>

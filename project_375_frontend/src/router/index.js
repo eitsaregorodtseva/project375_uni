@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import Cabinet from '@/components/Cabinet'
 import Registration from '@/components/Registration'
 import PasswordReset from '@/components/PasswordReset'
+import MyPage from '@/components/MyPage'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/passwordreset',
       name: 'passwordreset',
       component: PasswordReset
+    },
+    {
+      path: '/mypage',
+      name: 'mypage',
+      component: MyPage
     }
   ]
 })

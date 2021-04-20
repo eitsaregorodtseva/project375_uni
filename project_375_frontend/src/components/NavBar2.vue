@@ -2,19 +2,17 @@
   <div class="nav-bar">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <ul>
-      <li class="home"><router-link :to = "{ name:'home' }" exact><i class="fa fa-home"></i> ГЛАВНАЯ</router-link></li>
-      <li class="entry"><router-link :to = "{ name:'login' }">ВОЙТИ</router-link></li>
-      <li><a href="#" class="notification">
-        <a>УВЕДОМЛЕНИЯ</a>
-        <a class="number">1</a>
-      </a></li>
+      <li class="menus"><i class="fa fa-times-circle"></i></li>
+
+
+      <li class="logout"><router-link :to = "{ name:'home' }">ВЫЙТИ</router-link></li>
     </ul>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'NavBar',
+    name: 'NavBar2',
   }
 </script>
 
@@ -30,7 +28,7 @@
   }
   .nav-bar ul {
     list-style: none;
-    margin:0 5%;
+    margin:0 2%;
     padding: 0;
     text-align: center;
     color: white;
@@ -38,12 +36,14 @@
   .nav-bar ul li {
     display: inline-block;
     margin: 0 5px;
-    padding: 25px;
+    padding: 20px;
+    padding-left: 0px;
   }
   .home {
     float: left;
+    padding: 300px;
   }
-  .entry {
+  .logout {
     float: right;
   }
   .nav-bar:after {
@@ -61,9 +61,27 @@
     border-radius: 5px;
   }
   .nav-bar ul li a:hover {
-    background-color: #2ea44f;
+    background-color: red;
   }
-  .router-link-active {
-    background-color: #2ea44f;
-  }
+   .notification {
+     position: relative;
+     padding: 15px 26px;
+   }
+   .notification .number {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     position: absolute;
+     top: -10px;
+     right: -10px;
+     padding: 3px 5px;
+     background: red;
+     color: white;
+   }
+  .menus {
+font-size: 18px;
+font-weight: bold;
+    float: left;
+}
+
 </style>

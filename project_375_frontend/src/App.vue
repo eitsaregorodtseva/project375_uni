@@ -1,10 +1,14 @@
 <template>
   <div id="app">
+    <div id="nav">
+      <span v-if="isLoggedIn"> | <a @click="logout">Logout</a></span>
+    </div>
     <router-view/>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
