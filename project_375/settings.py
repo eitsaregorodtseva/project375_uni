@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'project_375.core.apps.CoreConfig',
     'social_django',
-    'project_375.apps.tests.apps.TestsConfig',
+    'project_375.apps.test.apps.TestConfig',
 ]
 
 CORS_ORIGIN_WHITELIST = (
