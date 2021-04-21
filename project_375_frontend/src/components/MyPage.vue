@@ -24,9 +24,15 @@
           <li><a href="#">Telegram бот</a></li>
     </ul>
   </div>
+  <div class="container-profile">
   <div class="header">
     <div class="info-form-header p-0">
       <h1>Мой профиль</h1>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
     </div>
   </div>
   <div class="child info-form" id="profile">
@@ -45,6 +51,7 @@
     </form>
     </div>
     <img src="@/assets/man.png" height="200px">
+  </div>
   </div>
   <div class="footer"></div>
 </body>
@@ -69,6 +76,8 @@ export default {
 
 <style scoped>
 .session-information {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
   background-color: #fff;
   color: #24292e;
   text-align: center;
@@ -79,7 +88,13 @@ export default {
 }
 .header {
   margin: 0;
-  padding-top: 20px;
+  padding-top: 0;
+}
+.container-profile {
+  padding: 50px;
+  width: 70%;
+  height: 1000px;
+  float: left;
 }
 .sidebar-menu {
   float: left;
@@ -150,12 +165,13 @@ export default {
   list-style: none;
 }
 .open-list:hover > ul {
-    display: block;
+  display: block;
 }
 .info-form {
   width: 900px;
   margin: 0 auto;
   padding-left: 0px;
+  padding-top: 50px;
 }
 .info-form-header {
   margin-top: 15px;
@@ -263,3 +279,4 @@ label {
   cursor: default;
 }
 </style>
+

@@ -220,16 +220,6 @@ export default {
   text-shadow: none;
   border: 0;
 }
-.header-user {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
-  width: 20%;
-  height: 300px;
-  float: left;
-  background-color: #f6f8fa;
-  text-align: left;
-  padding: 10px;
-}
 .header {
   margin: 0;
   padding: 0;
@@ -241,26 +231,11 @@ export default {
   color: #2f3033;
 height: 1000px;
 }
-.header-diagram {
-  width: 60%;
-  height: 300px;
-  float: left;
-}
-.header-bot {
-  width: 20%;
-  height: 300px;
-  float: right;
-}
 .container-tests {
-padding: 50px;
+  padding: 50px;
   width: 70%;
   height: 1000px;
   float: left;
-}
-.sidebar-diagram {
-  width: 20%;
-  height: 300px;
-  float: right;
 }
 .sidebar-tests ul {
   list-style-type: none;
@@ -289,9 +264,6 @@ padding: 50px;
 .active {
   background-color: #4CAF50;
   color: white;
-}
-.click {
-
 }
 .btn {
   margin-top: 20px;
@@ -342,9 +314,6 @@ padding: 50px;
 	border:1px solid;
 	padding:50px;
 	display:none;
-}
-.red {
-	background-color:red;
 }
 .comp_1 ul {
   text-align: center;
@@ -443,7 +412,7 @@ padding: 50px;
 	background-color: #2ea44f;
 	color: #fff;
 }
-.sidebar-men ul li ul li:hover ul{
+.sidebar-menu ul li ul li:hover ul{
 	display: block;
 }
 .sidebar-menu ul li ul{
@@ -454,36 +423,6 @@ padding: 50px;
   margin: 0;
   padding: 0;
 }
-  .WER {
-    background-color: #2c3e50;
-  }
-  .p {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-  }
-  * {box-sizing:border-box}
-
-/* Container for skill bars */
-.container {
-    width: 80%; /* Full width */
-    background-color: #ddd; /* Grey background */
-}
-
-.skills {
-    text-align: right; /* Right-align text */
-    padding-right: 20px; /* Add some right padding */
-    line-height: 40px; /* Set the line-height to center the text inside the skill bar, and to expand the height of the container */
-    color: white; /* White text color */
-}
-
-.html {width: 90%; background-color: #4CAF50;} /* Green */
-.css {width: 80%; background-color: #2196F3;} /* Blue */
-.js {width: 65%; background-color: #f44336;} /* Red */
-.php {width: 60%; background-color: #808080;} /* Dark Grey */
-  .p {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-  }
   .container-tests {
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
@@ -494,9 +433,6 @@ padding: 50px;
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     text-align: left;
-    padding-left: 100px;
-  }
-  .erer {
     padding-left: 100px;
   }
   .submenu {
