@@ -4,10 +4,6 @@
     <ul>
       <li class="home"><router-link :to = "{ name:'home' }" exact><i class="fa fa-home"></i> ГЛАВНАЯ</router-link></li>
       <li class="entry"><router-link :to = "{ name:'login' }">ВОЙТИ</router-link></li>
-      <li><a href="#" class="notification">
-        <a>УВЕДОМЛЕНИЯ</a>
-        <a class="number">1</a>
-      </a></li>
     </ul>
   </div>
 </template>

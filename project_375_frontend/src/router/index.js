@@ -6,6 +6,8 @@ import Cabinet from '@/components/Cabinet'
 import Registration from '@/components/Registration'
 import MyPage from '@/components/MyPage'
 import Statistics from '@/components/Statistics'
+import OperativeMemory1 from '@/components/OperativeMemory1'
+import OperativeMemory2 from '@/components/OperativeMemory2'
 
 Vue.use(Router)
 
@@ -40,6 +42,16 @@ export default new Router({
       path: '/statistics',
       name: 'statistics',
       component: Statistics
+    },
+    {
+      path: '/operativememory1',
+      name: 'operativememory1',
+      component: OperativeMemory1
+    },
+    {
+      path: '/operativememory2',
+      name: 'operativememory2',
+      component: OperativeMemory2
     }
   ]
 })
